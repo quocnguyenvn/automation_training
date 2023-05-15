@@ -23,3 +23,5 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
   })
+
+require('cypress-xpath')

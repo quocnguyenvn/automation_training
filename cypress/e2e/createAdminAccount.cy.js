@@ -17,8 +17,10 @@ describe('Verify error message display when creating admin account with register
 
       //Enter Username, Email, Phone number, Note
       cy.get('#name').type('Nguyễn Văn A')
-      cy.get('#email').type('nguyenvana@getnada.com')
-      cy.get('#phoneNumber').type('0378887773')
+
+          const email = 'nguyenvana0206@getnada.com'
+      cy.get('#email').type(email)
+      cy.get('#phoneNumber').type('0378887703')
       cy.get('#note').type('Tạo tài khoản admin')
 
       //Click 'Lưu thông tin' button
@@ -26,10 +28,5 @@ describe('Verify error message display when creating admin account with register
 
       //Assert the error message
       cy.get('#swal2-html-container').should('have.text', 'Email đã được đăng ký trước đó.')
-      
     })
-
-    
-
-   
-})
+  })
